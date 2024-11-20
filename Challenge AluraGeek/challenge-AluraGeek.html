@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge AluraGeek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <img src="./Recursos/header.png" alt="Encabezado de AluraGeek" class="header__image">
+    </header>
+
+    <main class="main-container">
+        <!-- Parte 1: Mis Productos -->
+        <section class="productos-section">
+            <h1 class="productos__titulo">Mis Productos:</h1>
+            <div class="productos-container" data-contenedor-productos>
+            </div>
+        </section>
+
+        <!-- Parte 2: Agregar Producto -->
+        <section class="formulario">
+            <h2 class="formulario__titulo">AGREGAR <br> PRODUCTO:</h2>
+            <form class="formulario__contenido">
+                <!-- Campo Nombre -->
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="nombre..." 
+                    class="formulario__input"
+                />
+        
+                <!-- Campo Precio -->
+                <label for="precio" class="formulario__label">Precio</label>
+                <input 
+                    type="text" 
+                    id="precio" 
+                    name="precio" 
+                    placeholder="precio..." 
+                    class="formulario__input"
+                />
+        
+                <!-- Campo Imagen -->
+                <label for="imagen" class="formulario__label">Imagen</label>
+                <input 
+                    type="file" 
+                    id="imagen" 
+                    name="imagen" 
+                    placeholder="imagen..." 
+                    class="formulario__input"
+                />
+        
+                <!-- Botones -->
+                <div class="formulario__botones">
+                    <button type="submit" class="formulario__boton boton--primario boton">Enviar</button>
+                    <button type="reset" class="formulario__boton formulario__boton--limpiar boton--secundario boton">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <img src="./Recursos/footer.png" alt="Logo de la aplicación" class="footer__logo">
+    </footer>   
+</body>
+<script src="js/app.js"></script>
+<script src="js/productos.js"></script>
+<script src="js/formulario.js"></script>
+</html>

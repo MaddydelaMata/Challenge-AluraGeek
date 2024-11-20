@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que los márgenes y rellenos no afecten el tamaño */
+}
+
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: #f4f4f4;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}
+
+.header__image {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Limita la altura del encabezado */
+    object-fit: cover;
+}
+
+/* Main container */
+.main-container {
+    flex: 1; /* Take all available space */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Parte 1: Productos */
+.productos-section {
+    width: 65%; /* Ocupa el 65% del espacio */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.productos__titulo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+    max-height: 500px; /* Altura máxima de la sección */
+    overflow-y: auto; /* Barra deslizadora vertical */
+}
+
+.card {
+    background-color: #6a0dad; /* Fondo morado */
+    border: 3px solid #000; /* Margen negrito */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #000; /* Borde negrito alrededor de la imagen */
+    border-radius: 8px 8px 0 0;
+}
+
+.card-container--info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-container--value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-container--value p {
+    font-size: 16px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.card-container--value img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-container--value img:hover {
+    transform: scale(1.2);
+}
+
+/* Ícono de eliminación (Google Fonts Material Symbols) */
+.delete-icon {
+    font-size: 24px; /* Tamaño del ícono */
+    color: #ffffff; /* Color del ícono */
+    cursor: pointer; /* Cursor tipo "mano" */
+    transition: transform 0.3s ease;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2); /* Amplía el ícono al pasar el cursor */
+}
+
+/* Parte 2: Formulario */
+.formulario {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.formulario__titulo {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.formulario__label {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.formulario__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #00458f;
+    background-color: #fff;
+    border: 2px solid #005cbd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario__input:focus {
+    border-color: #2f00ff;
+}
+
+.formulario__input::placeholder {
+    color: #004b9b;
+}
+
+.formulario__botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.boton {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: #3c00ff;
+    color: white;
+}
+
+.boton--primario:hover {
+    background-color: #0056b3;
+}
+
+.boton--secundario {
+    background-color: #fefefe;
+    color: #2704a4;
+    border: 2px solid #005cbd;
+}
+
+.boton--secundario:hover {
+    background-color: #c62828;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    margin-top: auto; 
+}
+
+.footer__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+    box-shadow: none;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .productos-section {
+        order: 2;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .productos-container {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .producto {
+        flex: 0 0 48%;
+        max-height: 200px;
+        scroll-snap-align: start;
+    }
+
+}
